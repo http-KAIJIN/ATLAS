@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Atlas Commerce - Styles CSS du Dashboard Décisionnel
+   Conçu pour une expérience utilisateur moderne, fluide et esthétique.
+   ========================================================================== */
+
+/* Variables globales de design */
+:root {
+    --bg-page: #f8fafc;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --brand-dark: #0f172a;
+    --brand-navy: #1e293b;
+    --brand-primary: #2563eb;
+    --brand-accent: #3b82f6;
+    --border-light: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    --radius-card: 12px;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   Bandeau d'en-tête (ZONE_ENTETE)
+   -------------------------------------------------------------------------- */
+.bandeau {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 24px 32px;
+    border-radius: var(--radius-card);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bandeau::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.bandeau h1 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.bandeau p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   Carte des Filtres (ZONE_FILTRES)
+   -------------------------------------------------------------------------- */
+.filter-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-card);
+    box-shadow: var(--card-shadow);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.etiquette {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Amélioration des composants de saisie */
+.DateRangePickerInput {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    overflow: hidden;
+}
+
+.DateInput_input {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    color: var(--text-main);
+}
+
+.Select-control {
+    border-radius: 8px !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Cartes KPI (ZONE_KPIS)
+   -------------------------------------------------------------------------- */
+.kpi-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-card);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.kpi-card .card-body {
+    padding: 20px;
+}
+
+.kpi-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.kpi-valeur {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--brand-dark);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+/* Indicateur secondaire d'état */
+#etat {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: -12px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Cartes Graphiques (ZONE_GRAPHIQUES)
+   -------------------------------------------------------------------------- */
+.graph-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-card);
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.graph-card:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+.graph-card .card-body {
+    padding: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Bouton et Interactions (ZONE_RESET_UI)
+   -------------------------------------------------------------------------- */
+#reset-region {
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    transition: all 0.2s ease;
+}
+
+#reset-region:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   Alerte d'analyse métier (ZONE_MESSAGE_UI)
+   -------------------------------------------------------------------------- */
+#lecture-metier {
+    border-radius: var(--radius-card);
+    font-size: 0.95rem;
+    border-left: 4px solid #0284c7;
+    background-color: #f0f9ff;
+    color: #0369a1;
+    font-weight: 500;
+    box-shadow: var(--card-shadow);
+    padding: 14px 20px;
+}
+
+/* Harmonisation radio buttons */
+.form-check-inline {
+    margin-top: 6px;
+    font-weight: 500;
+    color: var(--text-main);
+}
